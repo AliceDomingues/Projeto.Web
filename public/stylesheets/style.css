@@ -1,0 +1,67 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.color{
+  background-color: #eb74ab;
+}
+.fonte{
+  color: #eb74ab;
+  font-family: 'Mukta', sans-serif;
+  font-size: 30px;
+
+}
+
+.field #logo {
+	width: 100px;
+	height: 80px;
+	margin-top: 50px;
+}
+
+.field {
+	width: 400px;
+	height: 550px; 
+	margin: 0px auto;
+	margin-top: 7%;
+	border-radius: 50px;
+	background-color: #fbeded;
+	border: none;
+	backface-visibility: visible;
+  box-shadow: 2px 1px 52px 2px #fbeded ;
+}
+
+.form-usuario {
+	border: none;
+	color: #f2f2f2 !important;
+	background-color: #eb74ab;
+	width: 270px;
+	height: 30px;
+	border-radius: 55px;
+	margin-top: 20px;
+
+}
+
+.style{
+  margin-top: 100px;
+
+}
+
+.container{
+	text-decoration: none;
+	color: #FBF0F8 !important;
+	transition: .5s;
+	width: 154.31px;
+	height: 37.41px;
+	font-family: 'K2D', sans-serif;
+	font-size: 20px;
+	color: #FBF0F8;
+	background-color: #eb74ab;
+	border:3px solid #FBF0F8;
+	border-radius: 55px;
+}
+  
