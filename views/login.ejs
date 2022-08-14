@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600;700&display=swap%27');
+      </style>
+
+    
+</head>
+<body class="color">
+    
+    <section>
+        <fieldset class="field">
+            <center>
+    <br>
+    <br>
+    <h1 class="fonte">Login</h1>
+
+    <form action="/" method="post" class="style">
+        
+        <% if (message) { %>
+         
+            <p style="color: red;">
+                <%= message %> 
+            </p>
+
+        <% } %>
+
+        <input type="text"  class="form-usuario"  name="username" placeholder="email:">
+        <br>
+        <br>
+        <br>
+        <input type="password" class="form-usuario" name="password" placeholder="senha:" >
+        <br>
+        <br>
+        <br>
+        <input type="submit" class="container" value="Login">
+        
+    </form>
+    <img id="logo" src="/stylesheets/logo.png" alt="">
+    <center>
+    </fieldset>
+</section>
+</body>
+</html>
