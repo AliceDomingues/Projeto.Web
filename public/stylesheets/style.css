@@ -12,15 +12,15 @@ a {
 }
 .fonte{
   color: #eb74ab;
-  font-family: 'Mukta', sans-serif;
-  font-size: 30px;
+	font-family: 'K2D', sans-serif;
+  font-size: 20px;
 
 }
 
 .field #logo {
-	width: 100px;
-	height: 80px;
-	margin-top: 50px;
+	width: 120px;
+	height: 100px;
+	margin-top: 20px;
 }
 
 .field {
@@ -38,11 +38,13 @@ a {
 .form-usuario {
 	border: none;
 	color: #f2f2f2 !important;
-	background-color: #eb74ab;
-	width: 270px;
-	height: 30px;
+	background-color: #f2f2f2;
+  border:3px solid #eb74ab;
+
+	width: 230px;
+	height: 25px;
 	border-radius: 55px;
-	margin-top: 20px;
+	margin-top: 5px;
 
 }
 
@@ -53,15 +55,14 @@ a {
 
 .container{
 	text-decoration: none;
-	color: #FBF0F8 !important;
+	color: #eb74ab !important;
 	transition: .5s;
-	width: 154.31px;
-	height: 37.41px;
+	width: 130.31px;
+	height: 33.41px;
 	font-family: 'K2D', sans-serif;
 	font-size: 20px;
-	color: #FBF0F8;
-	background-color: #eb74ab;
-	border:3px solid #FBF0F8;
+	color: #eb74ab;
+	background-color: #FBF0F8;
+	border:3px solid #eb74ab;
 	border-radius: 55px;
 }
-  

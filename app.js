@@ -5,13 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
+
 const { Cookie } = require('express-session');
 const passport = require('passport');
-const dao = require('./database/dao');
-const LocalStrategy = require('passport-local').Strategy
+
+
 
 var app = express();
 
@@ -35,52 +33,11 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-passport.serializeUser(function (user, done){
-  done(null, user.id)
-})
-passport.deserializeUser(function(id, done){
-  dao.findById(id)
-  .then( ([rows]) => {
-    let user = rows[0]
-    return done(null, user)
-  }).catch( err => {
-    return done(err, null)
-  }) 
-})
+require('./services/auth')(passport)
 
-let strategyConfig ={
-  usernameField: 'username',
-  passwordField: 'password',
-}
-passport.use(new LocalStrategy(strategyConfig, function(username, password, done){
 
-  console.log('senha = ' + password)
 
-  dao.findByUsername(username)
-  .then( ([rows]) => {
-    if (rows.length == 0) return done(null, false)
-    
-    let user = rows[0]
-    console.log('user.senha = ' + user.senha)
-    console.log('senha = ' + password)
-    if(user.senha !=password) return done(null, false)
-    else return done(null, user)
-  }).catch( err => {
-    console.log(err)
-    return done(err, null)
-  } )
-
-}))
-
-let middlewareAutorization = function (req, resp, next){
-  console.log('AUTH =>>> '+ req.isAuthenticated())
-  if(req.isAuthenticated()) return next()
-  else resp.redirect('/')
-}
-
-app.use('/', loginRouter);
-app.use('/users', middlewareAutorization, usersRouter);
-app.use('/index', indexRouter );
+require('./routes/config')(app)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
