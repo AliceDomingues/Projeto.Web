@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600;700&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="stylesheets/styleList.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <body class="fonte">
+
+
+    <div class="container">
+      <nav class="navbar navbar-light">
+          <a class="col-3 navbar-brand" href="#">
+            <img src="images/logoJA.png" width="50%" alt="">
+          </a>
+          <h1 class="col-5">Listagem de Produtos</h1>
+
+          <form method="get" action="/produtos/search" class="col-3 row">
+            <div class="col-auto">
+              <input type="search" name="nome" class="form-control" placeholder="Buscar">
+            </div>
+            <button type="submit" class="col-auto procurar btn btn-outline-light"><i class="bi bi-search"></i></button>
+          </form>
+
+
+          <a href="/produtos/form" class="col-1 novo btn btn-outline-light"> <i class="bi bi-plus-square"></i></a>
+
+      </nav>
+      <div class="row">
+        
+        <% if (locals.messages.success) { %>
+          <div class="alert-success alert alert-light" role="alert">
+            <%= locals.messages.success %>
+          </div>
+        <% } %>
+
+        <% if (locals.messages.error) { %>
+          <div class="alert alert-danger" role="alert">
+            <%= locals.messages.error %>
+          </div>
+        <% } %>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Preço de compra</th>
+              <th scope="col">Preço de venda</th>
+              <th scope="col">Validade</th>
+              <th scope="col"> Opções </th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <% for( produto of produtos ) { %>
+              <tr class="lista">
+                <th scope="row"> <%= produto.id %>  </th>
+                <td> <%= produto.nome %>  </td>
+                <td> <%= produto.categoria %>  </td>
+                <td> <%= produto.preco_compra %>  </td>
+                <td> <%= produto.preco_venda %>  </td>
+                <td> <%= produto.dtValidade %>  </td>
+                <td>
+                  <div class="row">
+                    <form class="col-auto" action="/produtos/delete" method="post">
+                      <input type="hidden" name="id" value="<%= produto.id %>">
+                      <button  class="deletar btn btn-outline-light" type="submit"><i class="delete bi bi-trash3-fill"></i></button>
+                    </form>
+  
+                    <a class="col-auto editar btn btn-outline-light" href="/produtos/form?id=<%= produto.id %>"><i class="edit bi bi-pencil-fill"></i></a>
+  
+                  </div>
+                </td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+
   </body>
 </html>

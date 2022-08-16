@@ -3,13 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var flash = require('express-flash')
 var session = require('express-session')
-
 
 const { Cookie } = require('express-session');
 const passport = require('passport');
-
-
 
 var app = express();
 
@@ -20,7 +18,8 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('naoTaoSecreta'));
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({

@@ -1,0 +1,20 @@
+.container{
+    background-color: #fbeded !important;
+    border-radius: 20px;
+    height: 450px;
+    box-shadow: 2px 1px 52px 2px white;
+}
+
+body {
+    padding: 50px;
+    background-color: #eb74ab !important;
+}
+
+.fonte{
+    font-family: 'Mukta', sans-serif;
+  }
+
+.salvar{
+    background-color: #fb0079 !important;
+    border-color: #eb74ab !important;
+}

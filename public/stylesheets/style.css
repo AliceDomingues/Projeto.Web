@@ -1,10 +1,7 @@
 body {
+  overflow-y: hidden;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
 }
 
 .color{
@@ -12,39 +9,36 @@ a {
 }
 .fonte{
   color: #eb74ab;
-	font-family: 'K2D', sans-serif;
-  font-size: 20px;
+  font-family: 'Mukta', sans-serif;
+  font-size: 30px;
 
 }
 
 .field #logo {
-	width: 120px;
-	height: 100px;
-	margin-top: 20px;
+    width: 100px;
+    height: 80px;
+    margin-top: 50px;
 }
 
 .field {
-	width: 400px;
-	height: 550px; 
-	margin: 0px auto;
-	margin-top: 7%;
-	border-radius: 50px;
-	background-color: #fbeded;
-	border: none;
-	backface-visibility: visible;
-  box-shadow: 2px 1px 52px 2px #fbeded ;
+    width: 400px;
+    height: 550px; 
+    margin: 0px auto;
+    border-radius: 50px;
+    background-color: #fbeded;
+    border: none;
+    backface-visibility: visible;
+  box-shadow: 2px 1px 45px 2px #fbeded ;
 }
 
 .form-usuario {
-	border: none;
-	color: #f2f2f2 !important;
-	background-color: #f2f2f2;
-  border:3px solid #eb74ab;
-
-	width: 230px;
-	height: 25px;
-	border-radius: 55px;
-	margin-top: 5px;
+    border: none;
+    color: #f2f2f2 !important;
+    background-color: #eb74ab;
+    width: 270px;
+    height: 30px;
+    border-radius: 55px;
+    margin-top: 20px;
 
 }
 
@@ -54,15 +48,15 @@ a {
 }
 
 .container{
-	text-decoration: none;
-	color: #eb74ab !important;
-	transition: .5s;
-	width: 130.31px;
-	height: 33.41px;
-	font-family: 'K2D', sans-serif;
-	font-size: 20px;
-	color: #eb74ab;
-	background-color: #FBF0F8;
-	border:3px solid #eb74ab;
-	border-radius: 55px;
+    text-decoration: none;
+    color: #FBF0F8 !important;
+    transition: .5s;
+    width: 154.31px;
+    height: 37.41px;
+    font-family: 'K2D', sans-serif;
+    font-size: 20px;
+    color: #FBF0F8;
+    background-color: #eb74ab;
+    border:3px solid #FBF0F8;
+    border-radius: 55px;
 }
