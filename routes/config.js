@@ -1,6 +1,6 @@
 module.exports = function(app){
 
-    var indexRouter = require('./index');
+    var indexRouter = require('./produtos');
     var usersRouter = require('./users');
     var loginRouter = require('./login');
 
@@ -12,6 +12,6 @@ module.exports = function(app){
 
     app.use('/', loginRouter);
     app.use('/users', middlewareAutorization, usersRouter);
-     app.use('/index', indexRouter );
+     app.use('/produtos', indexRouter );
 
 }

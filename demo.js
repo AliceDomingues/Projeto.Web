@@ -1,10 +1,10 @@
 let bcrypt = require ('bcryptjs')
 
 var salt = bcrypt.genSaltSync(10);
-var hash = bcrypt.hashSync("lauh123", salt);
+var hash = bcrypt.hashSync("alice123", salt);
 
-console.log(bcrypt.compareSync('lauh123', hash)); //true
-console.log(bcrypt.compareSync('ellen123', hash)); //false
+console.log(bcrypt.compareSync('alice123', hash)); //true
+console.log(bcrypt.compareSync('julio123', hash)); //false
 
 //console.log(hash)
 

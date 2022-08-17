@@ -33,7 +33,7 @@ router.get('/form', async function (request, response){
 
     let row = {
         id: '',
-        nome: '',
+        nomeProdutos: '',
         categoria: '',
         preco_venda: '',
         preco_compra: '',
@@ -73,8 +73,8 @@ router.post('/save', function(request, response) {
 
 router.get('/search', function(request, response) {
 
-    if(request.query.nome){
-        dao.search(request.query.nome)
+    if(request.query.nomeProdutos){
+        dao.search(request.query.nomeProdutos)
         .then( ([rows]) => {
             response.render('produtos/list', { produtos: rows })
         }).catch( err => {

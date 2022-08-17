@@ -13,8 +13,8 @@ const pool = mysql.createPool({
 
 module.exports = {
 
-    findById: function (id){
-        return pool.promise().query('select * from users where id=?', [id])
+    findByIdLogin: function (idLogin){
+        return pool.promise().query('select * from users where idLogin=?', [idLogin])
     },
 
     findByUsername: function(nome) {
@@ -22,6 +22,22 @@ module.exports = {
     },
     list: function() {
         return pool.promise().query('select * from produtos')
+    },
+    findById(id) {
+        return pool.promise().query('select * from produtos where id=?', [id])
+    },
+    save: function(produto) {
+        return pool.promise().execute('INSERT INTO produtos (nomeProdutos, categoria, preco_compra, preco_venda, dtValidade) VALUES (?, ?, ?, ?, ?)', [produto.nomeProdutos, produto.categoria, produto.preco_compra, produto.preco_venda, produto.dtValidade])
+    },
+    update: function(produto) {
+        return pool.promise().execute('UPDATE produtos set nomeProdutos=?, categoria=?, preco_compra=?, preco_venda=?, dtValidade=? where id=?',
+        [produto.nomeProdutos, produto.categoria, produto.preco_compra, produto.preco_venda, produto.dtValidade, produto.id])
+    },
+    remove: function(id){
+        return pool.promise().execute("delete from produtos where id= ?" , [id]) 
+    },
+    search: function(nomeProdutos){
+        return pool.promise().query('select * from produtos where nomeProdutos like ?', [ '%'+nomeProdutos+'%'])
     }
 
 }

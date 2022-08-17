@@ -34,8 +34,6 @@ app.use(passport.session())
 
 require('./services/auth')(passport)
 
-
-
 require('./routes/config')(app)
 
 // catch 404 and forward to error handler
